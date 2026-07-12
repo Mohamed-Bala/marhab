@@ -81,15 +81,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "مطعم الركن الجميل — قائمة الطعام الإلكترونية" },
       {
         name: "description",
-        content: "قائمة طعام مطعم الركن الجميل — مقبلات، أطباق رئيسية، مشروبات وحلويات شرقية أصيلة.",
+        content: "مرحب منصة ذكية لإدارة المنيو الإلكتروني عبر QR، تمكّن المطاعم والمقاهي من عرض قوائمها بسهولة وتقديم تجربة طلب عصرية وسريعة",
       },
-      { property: "og:title", content: "مطعم الركن الجميل — قائمة الطعام" },
+      { property: "og:title", content: "مطعم الركن الجميل — قائمة الطعام الإلكترونية" },
       {
         property: "og:description",
-        content: "تصفح قائمة الطعام: مقبلات، مشاوي، مشروبات وحلويات شرقية.",
+        content: "مرحب منصة ذكية لإدارة المنيو الإلكتروني عبر QR، تمكّن المطاعم والمقاهي من عرض قوائمها بسهولة وتقديم تجربة طلب عصرية وسريعة",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "مطعم الركن الجميل — قائمة الطعام الإلكترونية" },
+      { name: "twitter:description", content: "مرحب منصة ذكية لإدارة المنيو الإلكتروني عبر QR، تمكّن المطاعم والمقاهي من عرض قوائمها بسهولة وتقديم تجربة طلب عصرية وسريعة" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3b4e3b99-dfba-4964-8c1e-f07fa3c00bb6/id-preview-8e010334--d0c8979d-b6ec-4590-9ea1-f146c548cf66.lovable.app-1783849522391.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3b4e3b99-dfba-4964-8c1e-f07fa3c00bb6/id-preview-8e010334--d0c8979d-b6ec-4590-9ea1-f146c548cf66.lovable.app-1783849522391.png" },
     ],
     links: [
       {
