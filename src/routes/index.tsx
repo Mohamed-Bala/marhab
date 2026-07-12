@@ -38,7 +38,7 @@ function MenuPage() {
               🍽
             </div>
             <div className="min-w-0">
-              <h1 className="truncate text-xl font-extrabold">مطعم الأصالة</h1>
+              <h1 className="truncate text-xl font-extrabold">مطعم الركن الجميل</h1>
               <p className="text-xs text-muted-foreground">نكهات شرقية أصيلة</p>
             </div>
           </div>
@@ -100,7 +100,7 @@ function MenuPage() {
       </main>
 
       <footer className="border-t border-border py-6 text-center text-sm text-muted-foreground">
-        مطعم الأصالة © {new Date().getFullYear()}
+        مطعم الركن الجميل © {new Date().getFullYear()}
       </footer>
     </div>
   );
