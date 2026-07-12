@@ -14,16 +14,114 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      categories: {
+        Row: {
+          created_at: string
+          id: string
+          name_ar: string
+          name_en: string | null
+          sort_order: number
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          name_ar: string
+          name_en?: string | null
+          sort_order?: number
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          name_ar?: string
+          name_en?: string | null
+          sort_order?: number
+        }
+        Relationships: []
+      }
+      menu_items: {
+        Row: {
+          category_id: string
+          created_at: string
+          description_ar: string | null
+          description_en: string | null
+          id: string
+          image_url: string | null
+          is_available: boolean
+          name_ar: string
+          name_en: string | null
+          price: number
+          sort_order: number
+        }
+        Insert: {
+          category_id: string
+          created_at?: string
+          description_ar?: string | null
+          description_en?: string | null
+          id?: string
+          image_url?: string | null
+          is_available?: boolean
+          name_ar: string
+          name_en?: string | null
+          price?: number
+          sort_order?: number
+        }
+        Update: {
+          category_id?: string
+          created_at?: string
+          description_ar?: string | null
+          description_en?: string | null
+          id?: string
+          image_url?: string | null
+          is_available?: boolean
+          name_ar?: string
+          name_en?: string | null
+          price?: number
+          sort_order?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "menu_items_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "categories"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_roles: {
+        Row: {
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      claim_admin_if_none: { Args: never; Returns: boolean }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +248,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "user"],
+    },
   },
 } as const
