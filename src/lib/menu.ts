@@ -32,5 +32,5 @@ export const menuItemsQuery = queryOptions({
 export function formatPrice(price: number): string {
   const n = Number(price);
   const s = Number.isInteger(n) ? n.toString() : n.toFixed(2);
-  return `${s} ر.س`;
+  return `${s} ج.س`;
 }

@@ -72,7 +72,7 @@ export function ItemDialog({
         </div>
         <div className="grid grid-cols-2 gap-3">
           <div>
-            <label className="mb-1.5 block text-sm font-medium">السعر (ر.س) *</label>
+            <label className="mb-1.5 block text-sm font-medium">السعر (ج.س) *</label>
             <input
               required
               type="number"

@@ -78,12 +78,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "مطعم الأصالة — قائمة الطعام الإلكترونية" },
+      { title: "مطعم الركن الجميل — قائمة الطعام الإلكترونية" },
       {
         name: "description",
-        content: "قائمة طعام مطعم الأصالة — مقبلات، أطباق رئيسية، مشروبات وحلويات شرقية أصيلة.",
+        content: "قائمة طعام مطعم الركن الجميل — مقبلات، أطباق رئيسية، مشروبات وحلويات شرقية أصيلة.",
       },
-      { property: "og:title", content: "مطعم الأصالة — قائمة الطعام" },
+      { property: "og:title", content: "مطعم الركن الجميل — قائمة الطعام" },
       {
         property: "og:description",
         content: "تصفح قائمة الطعام: مقبلات، مشاوي، مشروبات وحلويات شرقية.",
