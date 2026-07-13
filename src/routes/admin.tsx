@@ -32,9 +32,9 @@ function AdminPage() {
       navigate({ to: "/auth" });
       return;
     }
-    supabase.rpc("claim_admin_if_none").then(({ data, error }) => {
-      setIsAdmin(error ? false : Boolean(data));
-    });
+    claimAdminIfNone()
+      .then((res) => setIsAdmin(Boolean(res?.isAdmin)))
+      .catch(() => setIsAdmin(false));
   }, [loading, session, navigate]);
 
   if (loading || (session && isAdmin === null)) {
