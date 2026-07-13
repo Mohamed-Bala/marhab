@@ -6,6 +6,7 @@ import { ArrowRight, LogOut, Pencil, Plus, Trash2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/use-auth";
 import { categoriesQuery, menuItemsQuery, formatPrice, type Category, type MenuItem } from "@/lib/menu";
+import { claimAdminIfNone } from "@/lib/admin.functions";
 import { ItemDialog } from "@/components/admin/ItemDialog";
 import { CategoryDialog } from "@/components/admin/CategoryDialog";
 
@@ -31,9 +32,9 @@ function AdminPage() {
       navigate({ to: "/auth" });
       return;
     }
-    supabase.rpc("claim_admin_if_none").then(({ data, error }) => {
-      setIsAdmin(error ? false : Boolean(data));
-    });
+    claimAdminIfNone()
+      .then((res) => setIsAdmin(Boolean(res?.isAdmin)))
+      .catch(() => setIsAdmin(false));
   }, [loading, session, navigate]);
 
   if (loading || (session && isAdmin === null)) {
