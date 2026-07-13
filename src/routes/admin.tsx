@@ -32,7 +32,7 @@ function AdminPage() {
       navigate({ to: "/auth" });
       return;
     }
-    claimAdminIfNone()
+    checkIsAdmin()
       .then((res) => setIsAdmin(Boolean(res?.isAdmin)))
       .catch(() => setIsAdmin(false));
   }, [loading, session, navigate]);
