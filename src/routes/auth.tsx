@@ -24,7 +24,7 @@ function AuthPage() {
   const [busy, setBusy] = useState(false);
 
   const afterLogin = async () => {
-    await supabase.rpc("claim_admin_if_none");
+    await claimAdminIfNone().catch(() => {});
     navigate({ to: "/admin" });
   };
 
