@@ -3,6 +3,7 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { Modal } from "@/components/Modal";
 import type { Category, MenuItem } from "@/lib/menu";
+import { ImageUpload } from "./ImageUpload";
 
 const inputCls =
   "w-full rounded-xl border border-input bg-background px-3.5 py-2.5 text-sm outline-none transition-colors focus:border-ring focus:ring-2 focus:ring-ring/30";
@@ -96,14 +97,8 @@ export function ItemDialog({
           </div>
         </div>
         <div>
-          <label className="mb-1.5 block text-sm font-medium">رابط الصورة</label>
-          <input
-            dir="ltr"
-            placeholder="https://..."
-            value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
-            className={inputCls}
-          />
+          <label className="mb-1.5 block text-sm font-medium">صورة الصنف</label>
+          <ImageUpload value={imageUrl} onChange={setImageUrl} />
         </div>
         <button
           type="submit"
