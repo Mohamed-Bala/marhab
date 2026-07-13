@@ -3,6 +3,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable/index";
+import { claimAdminIfNone } from "@/lib/admin.functions";
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
