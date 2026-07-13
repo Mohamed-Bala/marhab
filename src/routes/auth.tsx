@@ -24,7 +24,6 @@ function AuthPage() {
   const [busy, setBusy] = useState(false);
 
   const afterLogin = async () => {
-    await claimAdminIfNone().catch(() => {});
     navigate({ to: "/admin" });
   };
 
