@@ -41,15 +41,9 @@ function MenuPage() {
               <p className="text-xs text-muted-foreground">نكهات شرقية أصيلة</p>
             </div>
           </div>
-          <Link
-            to="/admin"
-            aria-label="لوحة التحكم"
-            className="rounded-full p-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-          >
-            <Settings className="h-5 w-5" />
-          </Link>
         </div>
       </header>
+
 
       {/* Category chips */}
       <nav className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
