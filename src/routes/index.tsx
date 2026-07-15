@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { Settings } from "lucide-react";
 import { categoriesQuery, menuItemsQuery } from "@/lib/menu";
 import { MenuItemCard } from "@/components/MenuItemCard";
 
