@@ -180,20 +180,8 @@ function Dashboard() {
                       {catItems.map((item) => (
                         <div
                           key={item.id}
-                          className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-3 rounded-2xl bg-card p-3 shadow-card"
+                          className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 rounded-2xl bg-card p-3 shadow-card"
                         >
-                          <div className="h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-muted">
-                            {item.image_url && (
-                              <img
-                                src={item.image_url}
-                                alt={item.name_ar}
-                                width={56}
-                                height={56}
-                                loading="lazy"
-                                className="h-full w-full object-cover"
-                              />
-                            )}
-                          </div>
                           <div className="min-w-0">
                             <p className="truncate font-bold">{item.name_ar}</p>
                             <p className="text-sm text-muted-foreground">{formatPrice(Number(item.price))}</p>

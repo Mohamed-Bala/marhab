@@ -24,7 +24,6 @@ export function ItemDialog({
   const [descAr, setDescAr] = useState("");
   const [price, setPrice] = useState("");
   const [categoryId, setCategoryId] = useState("");
-  const [busy2, setBusy2] = useState(false); // placeholder-removed
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
@@ -33,7 +32,6 @@ export function ItemDialog({
     setDescAr(item?.description_ar ?? "");
     setPrice(item ? String(item.price) : "");
     setCategoryId(item?.category_id ?? categories[0]?.id ?? "");
-    setImageUrl(item?.image_url ?? "");
   }, [open, item, categories]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -44,7 +42,7 @@ export function ItemDialog({
       description_ar: descAr.trim() || null,
       price: Number(price),
       category_id: categoryId,
-      image_url: imageUrl.trim() || null,
+      image_url: null,
     };
     const { error } = item
       ? await supabase.from("menu_items").update(payload).eq("id", item.id)
@@ -94,10 +92,6 @@ export function ItemDialog({
               ))}
             </select>
           </div>
-        </div>
-        <div>
-          <label className="mb-1.5 block text-sm font-medium">صورة الصنف</label>
-          <ImageUpload value={imageUrl} onChange={setImageUrl} />
         </div>
         <button
           type="submit"
