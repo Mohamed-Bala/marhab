@@ -33,12 +33,13 @@ function MenuPage() {
       <header className="border-b border-border bg-card">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
           <div className="flex items-center gap-3">
-            <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary text-xl text-primary-foreground">
-              🍽
-            </div>
+            <img
+              src="/logo.png"
+              alt="مستر فرايز"
+              className="h-11 w-11 shrink-0 rounded-xl object-cover"
+            />
             <div className="min-w-0">
-              <h1 className="truncate text-xl font-extrabold">مطعم الركن الجميل</h1>
-              <p className="text-xs text-muted-foreground">نكهات شرقية أصيلة</p>
+              <h1 className="truncate text-xl font-extrabold">مستر فرايز</h1>
             </div>
           </div>
         </div>
@@ -93,7 +94,7 @@ function MenuPage() {
       </main>
 
       <footer className="border-t border-border py-6 text-center text-sm text-muted-foreground">
-        مطعم الركن الجميل © {new Date().getFullYear()}
+        مستر فرايز © {new Date().getFullYear()}
       </footer>
     </div>
   );

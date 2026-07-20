@@ -6,7 +6,7 @@ import { supabase } from "@/integrations/supabase/client";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "تسجيل الدخول — مطعم الركن الجميل" },
+      { title: "تسجيل الدخول — مستر فرايز" },
       { name: "description", content: "تسجيل دخول مدير المطعم إلى لوحة التحكم." },
       { name: "robots", content: "noindex" },
     ],
@@ -39,7 +39,7 @@ function AuthPage() {
       <div className="w-full max-w-md">
         <div className="mb-6 text-center">
           <Link to="/" className="text-2xl font-extrabold text-primary">
-            مطعم الركن الجميل
+            مستر فرايز
           </Link>
           <p className="mt-1 text-sm text-muted-foreground">لوحة تحكم المدير</p>
         </div>
