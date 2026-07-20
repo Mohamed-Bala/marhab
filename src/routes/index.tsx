@@ -69,7 +69,7 @@ function MenuPage() {
       {/* Menu sections */}
       <main className="mx-auto max-w-5xl px-4 pb-16 pt-8">
         {visibleCategories.map((cat) => {
-          const catItems = items.filter((i) => i.category_id === cat.id && i.image_url);
+          const catItems = items.filter((i) => i.category_id === cat.id);
           if (catItems.length === 0) return null;
           return (
             <section key={cat.id} className="mb-12">
@@ -85,7 +85,7 @@ function MenuPage() {
             </section>
           );
         })}
-        {items.filter((i) => i.image_url).length === 0 && (
+        {items.length === 0 && (
           <p className="py-20 text-center text-muted-foreground">
             لا توجد أصناف في القائمة بعد.
           </p>
