@@ -3,7 +3,6 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { Modal } from "@/components/Modal";
 import type { Category, MenuItem } from "@/lib/menu";
-import { ImageUpload } from "./ImageUpload";
 
 const inputCls =
   "w-full rounded-xl border border-input bg-background px-3.5 py-2.5 text-sm outline-none transition-colors focus:border-ring focus:ring-2 focus:ring-ring/30";
@@ -25,7 +24,7 @@ export function ItemDialog({
   const [descAr, setDescAr] = useState("");
   const [price, setPrice] = useState("");
   const [categoryId, setCategoryId] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
+  const [busy2, setBusy2] = useState(false); // placeholder-removed
   const [busy, setBusy] = useState(false);
 
   useEffect(() => {
